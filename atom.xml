@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-07-31T15:52:11.344Z</updated>
+  <updated>2018-08-01T13:50:00.331Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>first_blog</title>
-    <link href="http://yoursite.com/2018/07/31/first-blog/"/>
-    <id>http://yoursite.com/2018/07/31/first-blog/</id>
-    <published>2018-07-31T15:50:57.000Z</published>
-    <updated>2018-07-31T15:52:11.344Z</updated>
+    <title>one</title>
+    <link href="http://yoursite.com/2018/08/01/one/"/>
+    <id>http://yoursite.com/2018/08/01/one/</id>
+    <published>2018-08-01T13:49:40.000Z</published>
+    <updated>2018-08-01T13:50:00.331Z</updated>
     
     <summary type="html">
     
@@ -29,30 +29,7 @@
       
         
         
-          &lt;p&gt;lalala&lt;br&gt;blablabla&lt;/p&gt;
-
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="http://yoursite.com/2018/07/31/hello-world/"/>
-    <id>http://yoursite.com/2018/07/31/hello-world/</id>
-    <published>2018-07-31T13:58:27.720Z</published>
-    <updated>2018-07-31T13:58:27.720Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a
+          &lt;p&gt;one for
         
       
     
