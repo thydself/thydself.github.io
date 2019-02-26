@@ -183,7 +183,8 @@ f.read()
 f = open(&apos;/Users/michael/gbk.txt&apos;, &apos;r&apos;, encoding=&apos;gbk&apos;)
 f.read()
 </code></pre><p>errors:可选字符串，它指定编码错误的方式</p>
-<pre><code>遇到有些编码不规范的文件，你可能会遇到UnicodeDecodeError，因为在文本文件中可能夹杂了一些非法编码的字符。遇到这种情况，open()函数还接收一个errors参数，表示如果遇到编码错误后如何处理。最简单的方式是直接忽略：
+<pre><code>遇到有些编码不规范的文件，你可能会遇到UnicodeDecodeError，因为在文本文件中可能夹杂了一些非法编码的字符。
+遇到这种情况，open()函数还接收一个errors参数，表示如果遇到编码错误后如何处理。最简单的方式是直接忽略：
 f = open(&apos;/Users/michael/gbk.txt&apos;, &apos;r&apos;, encoding=&apos;gbk&apos;, errors=&apos;ignore&apos;)
 </code></pre><p>newline:换行控制，通用换行的工作方式(它只适用于文本)<br>模式)。它可以是无，“\n”，“\r”和“\r\n”。</p>
 <p>closefd:如果closefd为False，那么底层文件描述符将保持打开。<br>当文件被关闭时。当给定文件名时，将不起作用，默认为true</p>
@@ -206,7 +207,8 @@ print(f.read())
 </code></pre><p>##实例：</p>
 <pre><code>创建写入
 csvfile=open(&apos;csv_test.csv&apos;,&apos;wb&apos;)
-# csvfile.write(codecs.BOM_UTF8)#防止文件中显示中文乱码(并非乱码）,若注意生成文件编码，用notepad++转码也能正常显示。
+# csvfile.write(codecs.BOM_UTF8)
+# 防止文件中显示中文乱码(并非乱码）,若注意生成文件编码，用notepad++转码也能正常显示。
 writer=csv.writer(csvfile)
 writer.writerow([&apos;姓名&apos;,&apos;年龄&apos;,&apos;电话&apos;])
 data=[(&apos;alex&apos;,&apos;23&apos;,&apos;139&apos;),(&apos;tom&apos;,&apos;43&apos;,&apos;189&apos;)]
