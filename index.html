@@ -153,10 +153,8 @@
     </header>
     <main class="post-main" itemprop="articleBody">
       
-      <p>#python csv/txt 读写模式详解</p>
-<p>python 文件操作，数据导出，数据导入，经常会用到内置的文件操作库，有需求的时候，ctrl到库里查源代码会找到很多用法，这里只是为了方便查询，截取一些常用用法写到文章里。</p>
-<p>##1.打开文件</p>
-<blockquote>
+      <h1 id="python-csv-txt-读写模式详解"><a href="#python-csv-txt-读写模式详解" class="headerlink" title="python csv/txt 读写模式详解"></a>python csv/txt 读写模式详解</h1><p>python 文件操作，数据导出，数据导入，经常会用到内置的文件操作库，有需求的时候，ctrl到库里查源代码会找到很多用法，这里只是为了方便查询，截取一些常用用法写到文章里。</p>
+<h2 id="1-打开文件"><a href="#1-打开文件" class="headerlink" title="1.打开文件"></a>1.打开文件</h2><blockquote>
 <p>open(file, mode=’r’, buffering=None, encoding=None, errors=None, newline=None, closefd=True)</p>
 </blockquote>
 <p>file: file_path  # 例如：’conf/stu.csv’</p>
@@ -190,23 +188,21 @@ f = open(&apos;/Users/michael/gbk.txt&apos;, &apos;r&apos;, encoding=&apos;gbk&a
 </code></pre><p>newline:换行控制，通用换行的工作方式(它只适用于文本)<br>模式)。它可以是无，“\n”，“\r”和“\r\n”。</p>
 <p>closefd:如果closefd为False，那么底层文件描述符将保持打开。<br>当文件被关闭时。当给定文件名时，将不起作用，默认为true</p>
 <p>return fileobj</p>
-<p>##2.写入csv</p>
-<p>将open()方法返回的fileobj写入excel</p>
+<h2 id="2-写入csv"><a href="#2-写入csv" class="headerlink" title="2.写入csv"></a>2.写入csv</h2><p>将open()方法返回的fileobj写入excel</p>
 <pre><code>csv_writer = csv.writer(fileobj [, dialect=&apos;excel&apos;][optional keyword args])
     for row in sequence:
         csv_writer.writerow(row)
 </code></pre><p> or   </p>
 <pre><code>csv_writer = csv.writer(fileobj [, dialect=&apos;excel&apos;][optional keyword args])
 csv_writer.writerows(rows)
-</code></pre><p>##3.读取csv<br>将open()方法返回的fileobj读取出来</p>
+</code></pre><h2 id="3-读取csv"><a href="#3-读取csv" class="headerlink" title="3.读取csv"></a>3.读取csv</h2><p>将open()方法返回的fileobj读取出来</p>
 <pre><code>csv_reader = reader(fileobj [, dialect=&apos;excel&apos;][optional keyword args])
     for row in csv_reader:
         process(row)
-</code></pre><p>##4.with open as<br>自动调用close()方法</p>
+</code></pre><h2 id="4-with-open-as"><a href="#4-with-open-as" class="headerlink" title="4.with open as"></a>4.with open as</h2><p>自动调用close()方法</p>
 <pre><code> with open(&apos;/path/to/file&apos;, &apos;r&apos;) as f:
 print(f.read())
-</code></pre><p>##实例：</p>
-<pre><code>创建写入
+</code></pre><h2 id="实例："><a href="#实例：" class="headerlink" title="实例："></a>实例：</h2><pre><code>创建写入
 csvfile=open(&apos;csv_test.csv&apos;,&apos;wb&apos;)
 # csvfile.write(codecs.BOM_UTF8)
 # 防止文件中显示中文乱码(并非乱码）,若注意生成文件编码，用notepad++转码也能正常显示。
