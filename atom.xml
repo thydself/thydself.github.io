@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-02-26T04:37:20.231Z</updated>
+  <updated>2019-02-26T04:43:09.967Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,13 +17,22 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>postName</title>
-    <link href="http://yoursite.com/2019/02/26/postName/"/>
-    <id>http://yoursite.com/2019/02/26/postName/</id>
+    <title>python csv/txt 读写模式详解</title>
+    <link href="http://yoursite.com/2019/02/26/python%E6%96%87%E4%BB%B6%E8%AF%BB%E5%86%99%E6%A8%A1%E5%BC%8F/"/>
+    <id>http://yoursite.com/2019/02/26/python文件读写模式/</id>
     <published>2019-02-26T04:37:20.000Z</published>
-    <updated>2019-02-26T04:37:20.231Z</updated>
+    <updated>2019-02-26T04:43:09.967Z</updated>
     
     <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;#python csv/txt 读写模式详解&lt;/p&gt;
+&lt;p&gt;python
+        
+      
     
     </summary>
     
