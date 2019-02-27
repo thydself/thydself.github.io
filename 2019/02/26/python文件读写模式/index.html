@@ -147,6 +147,14 @@
         
         
         
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/python/" itemprop="url" rel="index"><span itemprop="name">python</span></a></span>
+        </span>
+        
+        
         
         
       </div>
@@ -154,152 +162,159 @@
     <main class="post-main" itemprop="articleBody">
       <excerpt in="" index="" |="" 首页摘要=""> 
 
-<p>python 文件操作，数据导出，数据导入，经常会用到内置的文件操作库，有需求的时候，ctrl到库里查源代码会找到很多用法，这里只是为了方便查询，截取一些常用用法写到文章里。</p>
+<p>python 文件操作,数据导出,数据导入,经常会用到内置的文件操作库,有需求的时候,ctrl到库里查源代码会找到很多用法,这里只是为了方便查询,截取一些常用用法写到文章里。</p>
 <a id="more"></a>
 <p><the rest="" of="" contents="" |="" 余下全文=""></the></p>
-<h2 id="1-打开文件"><a href="#1-打开文件" class="headerlink" title="1.打开文件"></a>1.打开文件</h2><blockquote>
-<p>open(file, mode=’r’, buffering=None, encoding=None, errors=None, newline=None, closefd=True)</p>
-</blockquote>
-<p>file: file_path  # 例如：’conf/stu.csv’</p>
-<p>mode：读写模式，详细有如下几点<br><figure class="hljs highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs javascript">	'r'以读方式打开文件，可读取文件信息<br>	'w'已写方式打开文件，可向文件写入信息。如文件存在，则清空，再写入<br>	'a'以追加模式打开文件，打开文件可指针移至末尾，文件不存在则创建<br>	'r+'以读写方式打开文件，可对文件进行读和写操作<br>	'w+'消除文件内容，以读写方式打开文件<br>	'a+'以读写方式打开文件，文件指针移至末尾<br>	'b'以二进制打开文件<br>	'x'创建一个新文件并打开它写入<br>	't'text模式（默认）<br>	'U'普通换行模式<br>```	<br>--<br><br>``` Python<br>	# 要读取二进制文件，比如图片、视频等等，用'rb'模式打开文件即可：<br>	f = open('/Users/michael/test.jpg', 'rb')<br>	f.read()<br></code></pre></td></tr></table></figure></p>
-<p>buffering：缓冲模式</p>
-<pre><code>0：缓冲关闭（只允许二进制模式下）
-1：行缓冲（只允许文本模式下）
-&gt;1整数:固定缓冲区大小
-</code></pre><p>encoding：设置用于解码或编码的编码方式。</p>
-<pre><code>要读取非UTF-8编码的文本文件，需要给open()函数传入encoding参数，例如，读取GBK编码的文件：
-f = open(&apos;/Users/michael/gbk.txt&apos;, &apos;r&apos;, encoding=&apos;gbk&apos;)
-f.read()
-</code></pre><p>errors:可选字符串，它指定编码错误的方式</p>
-<pre><code>遇到有些编码不规范的文件，你可能会遇到UnicodeDecodeError，因为在文本文件中可能夹杂了一些非法编码的字符。
-遇到这种情况，open()函数还接收一个errors参数，表示如果遇到编码错误后如何处理。最简单的方式是直接忽略：
-f = open(&apos;/Users/michael/gbk.txt&apos;, &apos;r&apos;, encoding=&apos;gbk&apos;, errors=&apos;ignore&apos;)
-</code></pre><p>newline:换行控制，通用换行的工作方式(它只适用于文本)<br>模式)。它可以是无，“\n”，“\r”和“\r\n”。</p>
-<p>closefd:如果closefd为False，那么底层文件描述符将保持打开。<br>当文件被关闭时。当给定文件名时，将不起作用，默认为true</p>
-<p>return fileobj</p>
-<h2 id="2-写入csv"><a href="#2-写入csv" class="headerlink" title="2.写入csv"></a>2.写入csv</h2><p>将open()方法返回的fileobj写入excel</p>
-<pre><code>csv_writer = csv.writer(fileobj [, dialect=&apos;excel&apos;][optional keyword args])
-    for row in sequence:
-        csv_writer.writerow(row)
-</code></pre><p> or   </p>
-<pre><code>csv_writer = csv.writer(fileobj [, dialect=&apos;excel&apos;][optional keyword args])
-csv_writer.writerows(rows)
-</code></pre><h2 id="3-读取csv"><a href="#3-读取csv" class="headerlink" title="3.读取csv"></a>3.读取csv</h2><p>将open()方法返回的fileobj读取出来</p>
-<pre><code>csv_reader = reader(fileobj [, dialect=&apos;excel&apos;][optional keyword args])
-    for row in csv_reader:
-        process(row)
-</code></pre><h2 id="4-with-open-as"><a href="#4-with-open-as" class="headerlink" title="4.with open as"></a>4.with open as</h2><p>自动调用close()方法</p>
-<pre><code> with open(&apos;/path/to/file&apos;, &apos;r&apos;) as f:
-print(f.read())
-</code></pre><h2 id="实例："><a href="#实例：" class="headerlink" title="实例："></a>实例：</h2><pre><code>创建写入
-csvfile=open(&apos;csv_test.csv&apos;,&apos;wb&apos;)
-# csvfile.write(codecs.BOM_UTF8)
-# 防止文件中显示中文乱码(并非乱码）,若注意生成文件编码，用notepad++转码也能正常显示。
+<h2 id="1-打开文件"><a href="#1-打开文件" class="headerlink" title="1.打开文件"></a>1.打开文件</h2><pre><code class="hljs undefined">open(file, <span class="hljs-attribute">mode</span>=<span class="hljs-string">'r'</span>, <span class="hljs-attribute">buffering</span>=None, <span class="hljs-attribute">encoding</span>=None, <span class="hljs-attribute">errors</span>=None, <span class="hljs-attribute">newline</span>=None, <span class="hljs-attribute">closefd</span>=<span class="hljs-literal">True</span>)</code></pre>
+<h3 id="mode-读写模式-详细有如下几点-："><a href="#mode-读写模式-详细有如下几点-：" class="headerlink" title="mode(读写模式,详细有如下几点)："></a>mode(读写模式,详细有如下几点)：</h3><p>　　‘r’ : 以读方式打开文件,可读取文件信息<br>　　‘w’ : 已写方式打开文件,可向文件写入信息。如文件存在,则清空,再写入<br>　　‘a’ : 以追加模式打开文件,打开文件可指针移至末尾,文件不存在则创建<br>　　‘r+’: 以读写方式打开文件,可对文件进行读和写操作<br>　　‘w+’: 消除文件内容,以读写方式打开文件<br>　　‘a+’: 以读写方式打开文件,文件指针移至末尾<br>　　‘b’ : 以二进制打开文件<br>　　‘x’ : 创建一个新文件并打开它写入<br>　　‘U’ : 普通换行模式  </p>
+<pre><code class="hljs undefined"># 要读取二进制文件,比如图片、视频等等,用<span class="hljs-string">'rb'</span>模式打开文件即可： 
+f = <span class="hljs-built_in">open</span>(<span class="hljs-string">'/Users/michael/test.jpg'</span>, <span class="hljs-string">'rb'</span>)  
+f.<span class="hljs-built_in">read</span>()</code></pre>
+<h3 id="buffering-缓冲模式-："><a href="#buffering-缓冲模式-：" class="headerlink" title="buffering(缓冲模式)：  　"></a>buffering(缓冲模式)：  　</h3><p>　　0：缓冲关闭(只允许二进制模式下)<br>　　1：行缓冲(只允许文本模式下)<br>　　整数:固定缓冲区大小</p>
+<h3 id="encoding-设置用于解码或编码的编码方式-："><a href="#encoding-设置用于解码或编码的编码方式-：" class="headerlink" title="encoding(设置用于解码或编码的编码方式)："></a>encoding(设置用于解码或编码的编码方式)：</h3><pre><code class="hljs undefined"><span class="hljs-comment"># 要读取非UTF-8编码的文本文件,需要给open()函数传入encoding参数,例如,读取GBK编码的文件：</span>
+f = <span class="hljs-keyword">open</span>(<span class="hljs-string">'/Users/michael/gbk.txt'</span>, <span class="hljs-string">'r'</span>, <span class="hljs-keyword">encoding</span>=<span class="hljs-string">'gbk'</span>)
+f.<span class="hljs-keyword">read</span>()</code></pre>
+<h3 id="errors-可选字符串-它指定编码错误的方式"><a href="#errors-可选字符串-它指定编码错误的方式" class="headerlink" title="errors(可选字符串,它指定编码错误的方式):"></a>errors(可选字符串,它指定编码错误的方式):</h3><pre><code class="hljs undefined"><span class="hljs-comment"># 遇到有些编码不规范的文件,你可能会遇到UnicodeDecodeError,因为在文本文件中可能夹杂了一些非法编码的字符。</span>
+<span class="hljs-comment"># 遇到这种情况,open()函数还接收一个errors参数,表示如果遇到编码错误后如何处理。最简单的方式是直接忽略：</span>
+<span class="hljs-attr">f</span> = open(<span class="hljs-string">'/Users/michael/gbk.txt'</span>, <span class="hljs-string">'r'</span>, encoding=<span class="hljs-string">'gbk'</span>, errors=<span class="hljs-string">'ignore'</span>)</code></pre>
+<h3 id="newline-换行控制-通用换行的工作方式-它只适用于文本模式"><a href="#newline-换行控制-通用换行的工作方式-它只适用于文本模式" class="headerlink" title="newline(换行控制,通用换行的工作方式,它只适用于文本模式):"></a>newline(换行控制,通用换行的工作方式,它只适用于文本模式):</h3><p> 　　无,”\n”,”\r”和”\r\n”</p>
+<h3 id="closefd"><a href="#closefd" class="headerlink" title="closefd:"></a>closefd:</h3><p>　　如果closefd为False,那么底层文件描述符将保持打开。<br>　　当文件被关闭时。当给定文件名时,将不起作用,默认为true</p>
+<h3 id="return-fileobj"><a href="#return-fileobj" class="headerlink" title="return fileobj"></a>return fileobj</h3><hr>
+<h2 id="2-写入csv"><a href="#2-写入csv" class="headerlink" title="2.写入csv"></a>2.写入csv</h2><p>将open()方法返回的fileobj写入excel<br><pre><code class="hljs undefined">csv_writer = csv.writer(fileobj [<span class="hljs-string">, dialect='excel'</span>][<span class="hljs-symbol">optional keyword args</span>])
+<span class="hljs-code">    for row in sequence:</span>
+<span class="hljs-code">        csv_writer.writerow(row)</span></code></pre></p>
+<p>or  </p>
+<pre><code class="hljs undefined">csv_writer = csv.writer(fileobj [<span class="hljs-string">, dialect='excel'</span>][<span class="hljs-symbol">optional keyword args</span>])
+csv_writer.writerows(rows)</code></pre>
+<hr>
+<h2 id="3-读取csv"><a href="#3-读取csv" class="headerlink" title="3.读取csv"></a>3.读取csv</h2><p>将open()方法返回的fileobj读取出来<br><pre><code class="hljs undefined">csv_reader = reader(fileobj [<span class="hljs-string">, dialect='excel'</span>][<span class="hljs-symbol">optional keyword args</span>])
+<span class="hljs-code">    for row in csv_reader:</span>
+<span class="hljs-code">        process(row)</span></code></pre></p>
+<hr>
+<h2 id="4-with-open-as"><a href="#4-with-open-as" class="headerlink" title="4.with open as"></a>4.with open as</h2><p>自动调用close()方法</p>
+<pre><code class="hljs undefined"><span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(<span class="hljs-string">'/path/to/file'</span>, <span class="hljs-string">'r'</span>) <span class="hljs-keyword">as</span> f:
+print(f.<span class="hljs-built_in">read</span>())</code></pre>
+<hr>
+<h2 id="实例："><a href="#实例：" class="headerlink" title="实例："></a>实例：</h2><pre><code class="hljs undefined"><span class="hljs-meta"># 创建写入</span>
+csvfile=open(<span class="hljs-string">'csv_test.csv'</span>,<span class="hljs-string">'wb'</span>)
+<span class="hljs-meta"># csvfile.write(codecs.BOM_UTF8)</span>
+<span class="hljs-meta"># 防止文件中显示中文乱码(并非乱码）,若注意生成文件编码,用notepad++转码也能正常显示。</span>
 writer=csv.writer(csvfile)
-writer.writerow([&apos;姓名&apos;,&apos;年龄&apos;,&apos;电话&apos;])
-data=[(&apos;alex&apos;,&apos;23&apos;,&apos;139&apos;),(&apos;tom&apos;,&apos;43&apos;,&apos;189&apos;)]
+writer.writerow([<span class="hljs-string">'姓名'</span>,<span class="hljs-string">'年龄'</span>,<span class="hljs-string">'电话'</span>])
+data=[(<span class="hljs-string">'alex'</span>,<span class="hljs-string">'23'</span>,<span class="hljs-string">'139'</span>),(<span class="hljs-string">'tom'</span>,<span class="hljs-string">'43'</span>,<span class="hljs-string">'189'</span>)]
 writer.writerows(data)
-csvfile.close()
-</code></pre><p>–</p>
-<pre><code>#读取
-csvfile=open(&apos;csv_test.csv&apos;,&apos;rb&apos;)
+csvfile.close()</code></pre>
+<p>–</p>
+<pre><code class="hljs undefined"><span class="hljs-comment"># 读取</span>
+csvfile=<span class="hljs-built_in">open</span>(<span class="hljs-string">'csv_test.csv'</span>,<span class="hljs-string">'rb'</span>)
 reader=csv.reader(csvfile)
-for line in reader:
-    print line
-csvfile.close()
-</code></pre><p>–</p>
-<pre><code>&lt;form action=&apos;test_form_action&apos; method=post&gt;
-        &lt;input type=&quot;text&quot; name=&quot;rows.Column1:records&quot; value=&quot;0&quot; /&gt;
-        &lt;input type=&quot;text&quot; name=&quot;rows.Column2:records&quot; value=&quot;1&quot; /&gt;
-        &lt;input type=&quot;text&quot; name=&quot;rows.Column3:records&quot; value=&quot;2&quot; /&gt;
-        &lt;input type=&quot;text&quot; name=&quot;rows.Column4:records&quot; value=&quot;3&quot; /&gt;
-&lt;br /&gt;
+<span class="hljs-keyword">for</span> <span class="hljs-built_in">line</span> <span class="hljs-keyword">in</span> reader:
+    print <span class="hljs-built_in">line</span>
+csvfile.<span class="hljs-built_in">close</span>()</code></pre>
+<p>–</p>
+<pre><code class="hljs undefined">&lt;form action=<span class="hljs-string">'test_form_action'</span> method=post&gt;
+    &lt;<span class="hljs-built_in">input</span> <span class="hljs-built_in">type</span>=<span class="hljs-string">"text"</span> name=<span class="hljs-string">"rows.Column1:records"</span> value=<span class="hljs-string">"0"</span> /&gt;
+    &lt;<span class="hljs-built_in">input</span> <span class="hljs-built_in">type</span>=<span class="hljs-string">"text"</span> name=<span class="hljs-string">"rows.Column2:records"</span> value=<span class="hljs-string">"1"</span> /&gt;
+    &lt;<span class="hljs-built_in">input</span> <span class="hljs-built_in">type</span>=<span class="hljs-string">"text"</span> name=<span class="hljs-string">"rows.Column3:records"</span> value=<span class="hljs-string">"2"</span> /&gt;
+    &lt;<span class="hljs-built_in">input</span> <span class="hljs-built_in">type</span>=<span class="hljs-string">"text"</span> name=<span class="hljs-string">"rows.Column4:records"</span> value=<span class="hljs-string">"3"</span> /&gt;
+&lt;<span class="hljs-keyword">br</span> /&gt;
 
 #构造dict写入
-fieldnames = [&apos;Column1&apos;, &apos;Column2&apos;, &apos;Column3&apos;, &apos;Column4&apos;] 
-dict_writer = csv.DictWriter(file(&apos;your.csv&apos;, &apos;wb&apos;), fieldnames=fieldnames)
+fieldnames = [<span class="hljs-string">'Column1'</span>, <span class="hljs-string">'Column2'</span>, <span class="hljs-string">'Column3'</span>, <span class="hljs-string">'Column4'</span>] 
+dict_writer = csv.DictWriter(<span class="hljs-keyword">file</span>(<span class="hljs-string">'your.csv'</span>, <span class="hljs-string">'wb'</span>), fieldnames=fieldnames)
 dict_writer. writeheader(fieldnames) # CSV第一行需要自己加入
-dict_writer.writerows(rows) 
-</code></pre><p>–</p>
-<pre><code>#txt读写
-#文件创建和写入
-f=open(&apos;test.txt&apos;,&apos;w&apos;)
-f.write(&apos;hello world&apos;)#数据只写到缓存，未保存到文件
-f.close()#保存到文件
-
-f1=open(&apos;test.txt&apos;,&apos;r+&apos;)#r+模式不会清空文件，而是替换内容
-f1.write(&apos;hello boy&apos;)
+dict_writer.writerows(rows)</code></pre>
+<p>–</p>
+<pre><code class="hljs undefined"><span class="hljs-comment">#txt读写</span>
+<span class="hljs-comment">#文件创建和写入</span>
+f=open(<span class="hljs-string">'test.txt'</span>,<span class="hljs-string">'w'</span>)
+f.write(<span class="hljs-string">'hello world'</span>)<span class="hljs-comment">#数据只写到缓存,未保存到文件</span>
+f.close()<span class="hljs-comment">#保存到文件</span>
+ 
+f1=open(<span class="hljs-string">'test.txt'</span>,<span class="hljs-string">'r+'</span>)<span class="hljs-comment">#r+模式不会清空文件,而是替换内容</span>
+f1.write(<span class="hljs-string">'hello boy'</span>)
 f1.close()
+ 
+f2=open(<span class="hljs-string">'test.txt'</span>,<span class="hljs-string">'a'</span>)<span class="hljs-comment">#a模式实现追加</span>
+f2.write(<span class="hljs-string">'\nhello girl'</span>)
+f2.writelines([<span class="hljs-string">'\n你好'</span>,<span class="hljs-string">'\n再见'</span>])<span class="hljs-comment">#多行写入</span>
+f2.flush()<span class="hljs-comment">#将修改写入文件,无须关闭</span>
 
-f2=open(&apos;test.txt&apos;,&apos;a&apos;)#a模式实现追加
-f2.write(&apos;\nhello girl&apos;)
-f2.writelines([&apos;\n你好&apos;,&apos;\n再见&apos;])#多行写入
-f2.flush()#将修改写入文件，无须关闭
-
-#文件读取(按指针）
-f3=open(&apos;test.txt&apos;)
-print f3.read(1)
-f3.seek(1,1)
-&apos;&apos;&apos;f.seek(偏移量，选项)
-（1）选项=0，表示将文件指针指向从文件头部到“偏移量”字节处
-（2）选项=1，表示将文件指针指向从文件的当前位置，向后移动“偏移量”字节
-（3）选项=2，表示将文件指针指向从文件的尾部，向前移动“偏移量”字节
-&apos;&apos;&apos;
-print f3.read(1)
-print f3.tell()#获取指针位置
+<span class="hljs-comment">#文件读取(按指针）</span>
+f3=open(<span class="hljs-string">'test.txt'</span>)
+<span class="hljs-keyword">print</span> f3.read(<span class="hljs-number">1</span>)
+f3.seek(<span class="hljs-number">1</span>,<span class="hljs-number">1</span>)
+<span class="hljs-string">'''
+f.seek(偏移量,选项)
+（1）选项=0,表示将文件指针指向从文件头部到"偏移量"字节处
+（2）选项=1,表示将文件指针指向从文件的当前位置,向后移动"偏移量"字节
+（3）选项=2,表示将文件指针指向从文件的尾部,向前移动"偏移量"字节
+'''</span>
+<span class="hljs-keyword">print</span> f3.read(<span class="hljs-number">1</span>)
+<span class="hljs-keyword">print</span> f3.tell()<span class="hljs-comment">#获取指针位置</span>
 f3.close()
-
-#文件读取（按行）
-&apos;&apos;&apos;
+ 
+<span class="hljs-comment">#文件读取（按行）</span>
+<span class="hljs-string">'''
 f3.read()#读取所有
 f3.readline()#逐行读取
-f3.next()#类readline，未读到报错
+f3.next()#类readline,未读到报错
 f3.readlines()#列表形式存放
-for i in open(&apos;test.txt&apos;):
+for i in open('test.txt'):
     print i
-&apos;&apos;&apos;
-
-#文件操作（查找)
-
-#方法一：全内容查找
-f4=open(&apos;test.txt&apos;)
+'''</span>
+ 
+<span class="hljs-comment">#文件操作（查找)</span>
+ 
+<span class="hljs-comment">#方法一：全内容查找</span>
+f4=open(<span class="hljs-string">'test.txt'</span>)
 source=f4.read()
 f4.close()
-s=len(re.findall(&apos;hello&apos;,source))
-print s
-
-#方法二：按行查找
-f5=open(&apos;test.txt&apos;)
-count=0
-for i in f5.readlines():
-    li=re.findall(&apos;hello&apos;,i)
-    if len(li)&gt;0:
+s=len(re.findall(<span class="hljs-string">'hello'</span>,source))
+<span class="hljs-keyword">print</span> s
+ 
+<span class="hljs-comment">#方法二：按行查找</span>
+f5=open(<span class="hljs-string">'test.txt'</span>)
+count=<span class="hljs-number">0</span>
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> f5.readlines():
+    li=re.findall(<span class="hljs-string">'hello'</span>,i)
+    <span class="hljs-keyword">if</span> len(li)&gt;<span class="hljs-number">0</span>:
         count=count+len(li)
-print &apos;search&apos;,count,&apos;hello&apos;
+<span class="hljs-keyword">print</span> <span class="hljs-string">'search'</span>,count,<span class="hljs-string">'hello'</span>
 f5.close()
-
-#文件操作（替换）实例：把test.txt 中的hello全部换为&quot;hi&quot;，并把结果保存到myhello.txt中。
-f6=open(&apos;test.txt&apos;)
-f7=open(&apos;myhello.txt&apos;,&apos;a&apos;)
-for i in f6.readlines():
-    f7.write(i.replace(&apos;hello&apos;,&apos;hi&apos;))
+ 
+<span class="hljs-comment">#文件操作（替换）实例：把test.txt 中的hello全部换为"hi",并把结果保存到myhello.txt中。</span>
+f6=open(<span class="hljs-string">'test.txt'</span>)
+f7=open(<span class="hljs-string">'myhello.txt'</span>,<span class="hljs-string">'a'</span>)
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> f6.readlines():
+    f7.write(i.replace(<span class="hljs-string">'hello'</span>,<span class="hljs-string">'hi'</span>))
 f6.close()
 f7.close()
-
-#实例：读取文件test.txt内容，去除空行和注释行后，以行为单位进行排序，并将结果输出为result.txt。
-f = open(&apos;cdays-4-test.txt&apos;)
+ 
+<span class="hljs-comment">#实例：读取文件test.txt内容,去除空行和注释行后,以行为单位进行排序,并将结果输出为result.txt。</span>
+f = open(<span class="hljs-string">'cdays-4-test.txt'</span>)
 result = list()
-for line in f.readlines():                # 逐行读取数据
-    line = line.strip()                #去掉每行头尾空白
-    if not len(line) or line.startswith(&apos;#&apos;):   # 判断是否是空行或注释行
-        continue                  #是的话，跳过不处理
-    result.append(line)              #保存
-result.sort()                       #排序结果
-print result
-open(&apos;result.txt&apos;,&apos;w&apos;).write(&apos;%s&apos; % &apos;\n&apos;.join(result))        #保存入结果文件
-</code></pre></excerpt>
+<span class="hljs-keyword">for</span> line <span class="hljs-keyword">in</span> f.readlines():                <span class="hljs-comment"># 逐行读取数据</span>
+    line = line.strip()                <span class="hljs-comment">#去掉每行头尾空白</span>
+    <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> len(line) <span class="hljs-keyword">or</span> line.startswith(<span class="hljs-string">'#'</span>):   <span class="hljs-comment"># 判断是否是空行或注释行</span>
+        <span class="hljs-keyword">continue</span>                  <span class="hljs-comment">#是的话,跳过不处理</span>
+    result.append(line)              <span class="hljs-comment">#保存</span>
+result.sort()                       <span class="hljs-comment">#排序结果</span>
+<span class="hljs-keyword">print</span> result
+open(<span class="hljs-string">'result.txt'</span>,<span class="hljs-string">'w'</span>).write(<span class="hljs-string">'%s'</span> % <span class="hljs-string">'\n'</span>.join(result))        <span class="hljs-comment">#保存入结果文件</span></code></pre></excerpt>
     </main>
     <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        
+        
+        
+        <a class="post-tag button" href="/tags/python/" style="background: #fc6423;" rel="tag"><i class="fas fa-tags"></i>python</a>
+        
+        <a class="post-tag button" href="/tags/data-export/" style="background: #a3bb54;" rel="tag"><i class="fas fa-tags"></i>data export</a>
+        
+      </div>
       
     </footer>
   </article>
@@ -363,7 +378,7 @@ open(&apos;result.txt&apos;,&apos;w&apos;).write(&apos;%s&apos; % &apos;\n&apos;
     
     <div class="categories-count">
       <div class="site-count-title">分类</div>
-      <div><a href="/categories/">0</a></div>
+      <div><a href="/categories/">1</a></div>
     </div>
     
     
@@ -372,7 +387,7 @@ open(&apos;result.txt&apos;,&apos;w&apos;).write(&apos;%s&apos; % &apos;\n&apos;
     
     <div class="tags-count">
       <div class="site-count-title">标签</div>
-      <div><a href="/tags/">0</a></div>
+      <div><a href="/tags/">2</a></div>
     </div>
     
   </div>
@@ -394,7 +409,7 @@ open(&apos;result.txt&apos;,&apos;w&apos;).write(&apos;%s&apos; % &apos;\n&apos;
 <hr>
 <div class="post-toc sidebar-item" id="toc-div">
   <div><i class="fas fa-list-ol"></i>文章目录</div>
-  <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#1-打开文件"><span class="toc-text">1.打开文件</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#2-写入csv"><span class="toc-text">2.写入csv</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#3-读取csv"><span class="toc-text">3.读取csv</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#4-with-open-as"><span class="toc-text">4.with open as</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#实例："><span class="toc-text">实例：</span></a></li></ol></div>
+  <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#1-打开文件"><span class="toc-text">1.打开文件</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#mode-读写模式-详细有如下几点-："><span class="toc-text">mode(读写模式,详细有如下几点)：</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#buffering-缓冲模式-："><span class="toc-text">buffering(缓冲模式)：  　</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#encoding-设置用于解码或编码的编码方式-："><span class="toc-text">encoding(设置用于解码或编码的编码方式)：</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#errors-可选字符串-它指定编码错误的方式"><span class="toc-text">errors(可选字符串,它指定编码错误的方式):</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#newline-换行控制-通用换行的工作方式-它只适用于文本模式"><span class="toc-text">newline(换行控制,通用换行的工作方式,它只适用于文本模式):</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#closefd"><span class="toc-text">closefd:</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#return-fileobj"><span class="toc-text">return fileobj</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#2-写入csv"><span class="toc-text">2.写入csv</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#3-读取csv"><span class="toc-text">3.读取csv</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#4-with-open-as"><span class="toc-text">4.with open as</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#实例："><span class="toc-text">实例：</span></a></li></ol></div>
 </div>
 
 

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-02-27T08:36:18.091Z</updated>
+  <updated>2019-02-27T09:26:33.973Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,16 +21,22 @@
     <link href="http://yoursite.com/2019/02/26/python%E6%96%87%E4%BB%B6%E8%AF%BB%E5%86%99%E6%A8%A1%E5%BC%8F/"/>
     <id>http://yoursite.com/2019/02/26/python文件读写模式/</id>
     <published>2019-02-26T04:37:20.000Z</published>
-    <updated>2019-02-27T08:36:18.091Z</updated>
+    <updated>2019-02-27T09:26:33.973Z</updated>
     
     <summary type="html">
     
       &lt;excerpt in=&quot;&quot; index=&quot;&quot; |=&quot;&quot; 首页摘要=&quot;&quot;&gt; 
 
-&lt;p&gt;python 文件操作，数据导出，数据导入，经常会用到内置的文件操作库，有需求的时候，ctrl到库里查源代码会找到很多用法，这里只是为了方便查询，截取一些常用用法写到文章里。&lt;/p&gt;
+&lt;p&gt;python 文件操作,数据导出,数据导入,经常会用到内置的文件操作库,有需求的时候,ctrl到库里查源代码会找到很多用法,这里只是为了方便查询,截取一些常用用法写到文章里。&lt;/p&gt;
     
     </summary>
     
+      <category term="python" scheme="http://yoursite.com/categories/python/"/>
+    
+    
+      <category term="python" scheme="http://yoursite.com/tags/python/"/>
+    
+      <category term="data export" scheme="http://yoursite.com/tags/data-export/"/>
     
   </entry>
   
