@@ -172,11 +172,8 @@
 &apos;x&apos;创建一个新文件并打开它写入
 &apos;t&apos;text模式（默认）
 &apos;U&apos;普通换行模式
-</code></pre><p>–<br>“””Python<br>code here</p>
-<pre><code>要读取二进制文件，比如图片、视频等等，用&apos;rb&apos;模式打开文件即可：
-f = open(&apos;/Users/michael/test.jpg&apos;, &apos;rb&apos;)
-f.read()
-</code></pre><p>“””</p>
+</code></pre><p>–</p>
+<figure class="hljs highlight Python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs Python"><br><span class="hljs-comment"># 要读取二进制文件，比如图片、视频等等，用'rb'模式打开文件即可：</span><br>f = open(<span class="hljs-string">'/Users/michael/test.jpg'</span>, <span class="hljs-string">'rb'</span>)<br>f.read()<br></code></pre></td></tr></table></figure>
 <p>buffering：缓冲模式</p>
 <pre><code>0：缓冲关闭（只允许二进制模式下）
 1：行缓冲（只允许文本模式下）
