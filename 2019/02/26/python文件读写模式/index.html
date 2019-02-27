@@ -161,19 +161,7 @@
 <p>open(file, mode=’r’, buffering=None, encoding=None, errors=None, newline=None, closefd=True)</p>
 </blockquote>
 <p>file: file_path  # 例如：’conf/stu.csv’</p>
-<p>mode：读写模式，详细有如下几点</p>
-<pre><code>&apos;r&apos;以读方式打开文件，可读取文件信息
-&apos;w&apos;已写方式打开文件，可向文件写入信息。如文件存在，则清空，再写入
-&apos;a&apos;以追加模式打开文件，打开文件可指针移至末尾，文件不存在则创建
-&apos;r+&apos;以读写方式打开文件，可对文件进行读和写操作
-&apos;w+&apos;消除文件内容，以读写方式打开文件
-&apos;a+&apos;以读写方式打开文件，文件指针移至末尾
-&apos;b&apos;以二进制打开文件
-&apos;x&apos;创建一个新文件并打开它写入
-&apos;t&apos;text模式（默认）
-&apos;U&apos;普通换行模式
-</code></pre><p>–</p>
-<figure class="hljs highlight Python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs Python"><br><span class="hljs-comment"># 要读取二进制文件，比如图片、视频等等，用'rb'模式打开文件即可：</span><br>f = open(<span class="hljs-string">'/Users/michael/test.jpg'</span>, <span class="hljs-string">'rb'</span>)<br>f.read()<br></code></pre></td></tr></table></figure>
+<p>mode：读写模式，详细有如下几点<br><figure class="hljs highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs javascript">	'r'以读方式打开文件，可读取文件信息<br>	'w'已写方式打开文件，可向文件写入信息。如文件存在，则清空，再写入<br>	'a'以追加模式打开文件，打开文件可指针移至末尾，文件不存在则创建<br>	'r+'以读写方式打开文件，可对文件进行读和写操作<br>	'w+'消除文件内容，以读写方式打开文件<br>	'a+'以读写方式打开文件，文件指针移至末尾<br>	'b'以二进制打开文件<br>	'x'创建一个新文件并打开它写入<br>	't'text模式（默认）<br>	'U'普通换行模式<br>```	<br>--<br><br>``` Python<br>	# 要读取二进制文件，比如图片、视频等等，用'rb'模式打开文件即可：<br>	f = open('/Users/michael/test.jpg', 'rb')<br>	f.read()<br></code></pre></td></tr></table></figure></p>
 <p>buffering：缓冲模式</p>
 <pre><code>0：缓冲关闭（只允许二进制模式下）
 1：行缓冲（只允许文本模式下）
