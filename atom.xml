@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-02-28T09:13:31.527Z</updated>
+  <updated>2019-02-28T10:16:48.253Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://yoursite.com/2019/02/28/github-hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/"/>
     <id>http://yoursite.com/2019/02/28/github-hexo搭建个人博客网站/</id>
     <published>2019-02-28T09:13:31.000Z</published>
-    <updated>2019-02-28T09:13:31.527Z</updated>
+    <updated>2019-02-28T10:16:48.253Z</updated>
     
     <summary type="html">
     
@@ -29,12 +29,16 @@
       
         
         
-          &lt;!-- build time:Thu Feb 28 2019 17:51:53 GMT+0800 (GMT+08:00) --&gt;&lt;!-- rebuild by neat
+          &lt;!-- build time:Thu Feb 28 2019 18:25:10 GMT+0800 (GMT+08:00) --&gt;&lt;!-- rebuild by neat
         
       
     
     </summary>
     
+      <category term="JavaScript" scheme="http://yoursite.com/categories/JavaScript/"/>
+    
+    
+      <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
     
   </entry>
   
@@ -47,7 +51,7 @@
     
     <summary type="html">
     
-      &lt;!-- build time:Thu Feb 28 2019 17:51:53 GMT+0800 (GMT+08:00) --&gt;&lt;excerpt in=&quot;&quot; index=&quot;&quot; |=&quot;&quot; 首页摘要=&quot;&quot;&gt;&lt;p&gt;python 文件操作,数据导出,数据导入,经常会用到内置的文件操作库,有需求的时候,ctrl到库里查源代码会找到很多用法,这里只是为了方便查询,截取一些常用用法写到文章里。&lt;/p&gt;
+      &lt;!-- build time:Thu Feb 28 2019 18:25:10 GMT+0800 (GMT+08:00) --&gt;&lt;excerpt in=&quot;&quot; index=&quot;&quot; |=&quot;&quot; 首页摘要=&quot;&quot;&gt;&lt;p&gt;python 文件操作,数据导出,数据导入,经常会用到内置的文件操作库,有需求的时候,ctrl到库里查源代码会找到很多用法,这里只是为了方便查询,截取一些常用用法写到文章里。&lt;/p&gt;
     
     </summary>
     
