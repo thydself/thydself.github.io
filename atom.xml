@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-03-05T03:08:45.689Z</updated>
+  <updated>2019-03-05T03:12:35.536Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>pm2</title>
+    <link href="http://yoursite.com/2019/03/05/pm2/"/>
+    <id>http://yoursite.com/2019/03/05/pm2/</id>
+    <published>2019-03-05T03:12:35.000Z</published>
+    <updated>2019-03-05T03:12:35.536Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;!-- build time:Tue Mar 05 2019 11:12:49 GMT+0800 (GMT+08:00) --&gt;&lt;!-- rebuild by neat
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>TotalControl</title>
@@ -29,7 +51,7 @@
       
         
         
-          &lt;!-- build time:Tue Mar 05 2019 11:10:24 GMT+0800 (GMT+08:00) --&gt;&lt;!-- rebuild by neat
+          &lt;!-- build time:Tue Mar 05 2019 11:12:49 GMT+0800 (GMT+08:00) --&gt;&lt;!-- rebuild by neat
         
       
     
@@ -51,7 +73,7 @@
       
         
         
-          &lt;!-- build time:Tue Mar 05 2019 11:10:24 GMT+0800 (GMT+08:00) --&gt;&lt;!-- rebuild by neat
+          &lt;!-- build time:Tue Mar 05 2019 11:12:49 GMT+0800 (GMT+08:00) --&gt;&lt;!-- rebuild by neat
         
       
     
@@ -73,7 +95,7 @@
       
         
         
-          &lt;!-- build time:Tue Mar 05 2019 11:10:24 GMT+0800 (GMT+08:00) --&gt;&lt;!-- rebuild by neat
+          &lt;!-- build time:Tue Mar 05 2019 11:12:49 GMT+0800 (GMT+08:00) --&gt;&lt;!-- rebuild by neat
         
       
     
@@ -91,7 +113,7 @@
     
     <summary type="html">
     
-      &lt;!-- build time:Tue Mar 05 2019 11:10:25 GMT+0800 (GMT+08:00) --&gt;&lt;p&gt;&lt;excerpt in=&quot;&quot; index=&quot;&quot; |=&quot;&quot; 首页摘要=&quot;&quot;&gt;&lt;br&gt;&amp;#8195;&amp;#8195;很早之前就想做个博客了,最早搭博客是用 阿里云服务器+WordPress,但是毕竟阿里云是要钱的,于是找到了这款hexo,&lt;br&gt;基于Node.js的静态博客框架,可以方便的生成静态网页托管在GitHub和Coding上,主要原因还是免费！&lt;/excerpt&gt;&lt;/p&gt;
+      &lt;!-- build time:Tue Mar 05 2019 11:12:49 GMT+0800 (GMT+08:00) --&gt;&lt;p&gt;&lt;excerpt in=&quot;&quot; index=&quot;&quot; |=&quot;&quot; 首页摘要=&quot;&quot;&gt;&lt;br&gt;&amp;#8195;&amp;#8195;很早之前就想做个博客了,最早搭博客是用 阿里云服务器+WordPress,但是毕竟阿里云是要钱的,于是找到了这款hexo,&lt;br&gt;基于Node.js的静态博客框架,可以方便的生成静态网页托管在GitHub和Coding上,主要原因还是免费！&lt;/excerpt&gt;&lt;/p&gt;
     
     </summary>
     
@@ -111,7 +133,7 @@
     
     <summary type="html">
     
-      &lt;!-- build time:Tue Mar 05 2019 11:10:25 GMT+0800 (GMT+08:00) --&gt;&lt;excerpt in=&quot;&quot; index=&quot;&quot; |=&quot;&quot; 首页摘要=&quot;&quot;&gt;&lt;p&gt;&amp;#8195;&amp;#8195;python 文件操作,数据导出,数据导入,经常会用到内置的文件操作库,这里汇总了基本的用法&lt;/p&gt;
+      &lt;!-- build time:Tue Mar 05 2019 11:12:49 GMT+0800 (GMT+08:00) --&gt;&lt;excerpt in=&quot;&quot; index=&quot;&quot; |=&quot;&quot; 首页摘要=&quot;&quot;&gt;&lt;p&gt;&amp;#8195;&amp;#8195;python 文件操作,数据导出,数据导入,经常会用到内置的文件操作库,这里汇总了基本的用法&lt;/p&gt;
     
     </summary>
     
